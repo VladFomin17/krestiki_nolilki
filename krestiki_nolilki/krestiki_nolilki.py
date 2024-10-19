@@ -27,3 +27,18 @@ def restart_game():
     print("Чтобы сыграть ещё раз, введите пробел")
     if input() == " ":
         main()
+
+def main():
+    board = initialize_board()
+    current_player = 'X'
+
+    while True:
+        print_board(board)
+        try:
+            move = int(input(f"Игрок {current_player}, введите номер клетки (1-9): ")) - 1
+            if board[move] != ' ':
+                print("Эта клетка уже занята. Попробуйте снова.")
+                continue
+        except (ValueError, IndexError):
+            print("Некорректный ввод. Введите число от 1 до 9.")
+            continue
