@@ -22,3 +22,8 @@ def check_winner(board):
 
 def is_full(board):
     return ' ' not in board
+
+def restart_game():
+    print("Чтобы сыграть ещё раз, введите пробел")
+    if input() == " ":
+        main()
