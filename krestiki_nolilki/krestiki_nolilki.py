@@ -19,3 +19,6 @@ def check_winner(board):
         if board[a] == board[b] == board[c] != ' ':
             return board[a] 
     return None
+
+def is_full(board):
+    return ' ' not in board
