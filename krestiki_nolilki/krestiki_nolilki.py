@@ -42,3 +42,23 @@ def main():
         except (ValueError, IndexError):
             print("Некорректный ввод. Введите число от 1 до 9.")
             continue
+
+        board[move] = current_player
+        winner = check_winner(board)
+
+        if winner:
+            print_board(board)
+            print(f"Поздравляем! Игрок {winner} выиграл!")
+            break
+        
+        if is_full(board):
+            print_board(board)
+            print("Игра закончилась вничью!")
+            break
+        
+    current_player = 'O' if current_player == 'X' else 'X'
+
+    restart_game()
+
+if __name__ == "__main__":
+    main()
